@@ -200,8 +200,8 @@ public class SwapNodes {
 }
 
 class BinaryTree {
-    protected BinaryTree left, right;
-    private int value;
+    BinaryTree left, right;
+    int value;
 
     BinaryTree(int value) {
         setValue(value);
