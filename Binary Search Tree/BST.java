@@ -129,26 +129,6 @@ public class BST {
         }
         return;
     }
-    public void levelorder(){
-        _levelorder(root);
-        System.out.println();
-    }
-
-    private void _levelorder(Node root){
-        if(root==null) return;
-        Queue<Node> q=new LinkedList<>();
-        q.add(root);
-
-        while(!q.isEmpty()){
-
-            Node curr=q.peek();
-            q.poll();
-            System.out.print(curr.value+" ");
-
-            if(curr.left!=null) q.add(curr.left);
-            if(curr.right!=null) q.add(curr.right);
-        }
-    }
 
     public static void main(String[] args) {
         BST bst = new BST();
@@ -164,6 +144,5 @@ public class BST {
         bst.postorder();    //postorder traversal
         bst.remove(4);   //remove 4 from the bst
         bst.isExist(7);
-        bst.levelorder();
     }
 }
