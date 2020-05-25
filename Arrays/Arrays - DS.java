@@ -10,11 +10,11 @@ public class Solution {
 
     // Complete the reverseArray function below.
     static int[] reverseArray(int[] a) {
-        int[] b=new int[a.length];
+        int[] b = new int[a.length];
 
-        int indexA=a.length - 1;
-        for(int i=0;i<a.length;i++){
-            b[i]=a[indexA];
+        int indexA = a.length - 1;
+        for(int i = 0;i < a.length;i++){
+            b[i] = a[indexA];
             indexA--;
         }
 
