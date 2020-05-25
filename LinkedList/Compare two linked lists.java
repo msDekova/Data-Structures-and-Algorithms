@@ -62,17 +62,17 @@ public class Solution {
      *
      */
     static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
-        if(head1==null || head2==null) return false;
+        if(head1 == null || head2 == null) return false;
 
-        SinglyLinkedListNode curr1=head1, curr2=head2;
-        while(curr1!=null && curr2!=null){
+        SinglyLinkedListNode curr1 = head1, curr2 = head2;
+        while(curr1 != null && curr2 != null){
             if(curr1.data != curr2.data) return false;
 
-            curr1=curr1.next;
-            curr2=curr2.next;
+            curr1 = curr1.next;
+            curr2 = curr2.next;
         }
-        if(curr1!=null) return false;
-        if(curr2!=null) return false;
+        if(curr1 != null) return false;
+        if(curr2 != null) return false;
 
         return true;
     }
