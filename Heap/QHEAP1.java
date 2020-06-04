@@ -1,41 +1,30 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Solution {
-    public static int[] dLeftRotation(int[] arr, int d){
-        int[] ans = new int[arr.length];
-        int begin=arr.length-d;
-        int j=0,i=0;
-        while(begin<arr.length){
-            ans[begin]=arr[j];
-            begin++;
-            j++;
-        }
-        while(j<arr.length && i<d){
-            ans[i]=arr[j];
-            i++;
-            j++;
-        }
-
-        return ans;
-    }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int numOfQueries = scanner.nextInt();
 
-        int n=scanner.nextInt();
-        int d=scanner.nextInt();
+        TreeSet<Integer> heap = new TreeSet<>();
 
-        int[] arr = new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=scanner.nextInt();
+        scanner.nextLine();
+        while (numOfQueries-- > 0) {
+            String input = scanner.nextLine();
+            int query = Integer.parseInt(input.split(" ")[0]);
+            if (query == 1 || query == 2) {
+                int v = Integer.parseInt(input.split(" ")[1]);
+                /// 1 v -> add an element v to the heap
+                if(query==1){
+                    heap.add(v);
+                } else {
+                    /// 2 v -> delete an element v from he heap
+                    heap.remove(v);
+                }
+            } else {
+                /// 3 -> print the minimum of all elements in the heap
+                System.out.println(heap.first());
+            }
         }
-
         scanner.close();
-
-        int[] retArr=dLeftRotation(arr,d);
-        for(int i=0;i<retArr.length;i++){
-            System.out.print(retArr[i]+" ");
-        }
     }
 }
